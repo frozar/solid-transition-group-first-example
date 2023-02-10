@@ -1,4 +1,4 @@
-import { Component, createSignal } from "solid-js";
+import { Component, createSignal, Show } from "solid-js";
 
 import { Transition } from "solid-transition-group";
 
@@ -9,7 +9,11 @@ const App: Component = () => {
   return (
     <>
       <button onClick={() => setShow((show) => !show)}>Toggle show</button>
-      <Transition name="slide-fade">{show() && <div>Hello</div>}</Transition>
+      <Transition name="slide-fade">
+        <Show when={show()}>
+          <div>Hello</div>
+        </Show>
+      </Transition>
     </>
   );
 };
