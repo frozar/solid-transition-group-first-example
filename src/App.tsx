@@ -2,6 +2,8 @@ import { Component, createSignal } from "solid-js";
 
 import { Transition } from "solid-transition-group";
 
+import "./App.css";
+
 const App: Component = () => {
   const [show, setShow] = createSignal(false);
   return (
